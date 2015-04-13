@@ -6582,10 +6582,10 @@ class _ComputeV4Proxy(object):
     def change_instance_metadata(self, ctxt, instance, diff):
         return self.manager.change_instance_metadata(ctxt, instance, diff)
 
-    def check_can_live_migrate_destination(self, ctxt, instance, destination,
+    def check_can_live_migrate_destination(self, ctxt, instance,
                                            block_migration, disk_over_commit):
         return self.manager.check_can_live_migrate_destination(
-            ctxt, instance, destination, block_migration, disk_over_commit)
+            ctxt, instance, block_migration, disk_over_commit)
 
     def check_can_live_migrate_source(self, ctxt, instance, dest_check_data):
         return self.manager.check_can_live_migrate_source(ctxt, instance,
@@ -6656,9 +6656,9 @@ class _ComputeV4Proxy(object):
     def inject_network_info(self, ctxt, instance):
         return self.manager.inject_network_info(ctxt, instance)
 
-    def live_migration(self, ctxt, instance, dest, block_migration,
+    def live_migration(self, ctxt, dest, instance, block_migration,
                        migrate_data=None):
-        return self.manager.live_migration(ctxt, instance, dest,
+        return self.manager.live_migration(ctxt, dest, instance,
                                            block_migration,
                                            migrate_data=migrate_data)
 
